@@ -35,6 +35,8 @@ public sealed class PlayerBall : Component
 	protected override void OnStart()
 	{
 		var mr = GetComponent<ModelRenderer>();
+		var hl = GetComponent<HighlightOutline>();
+		hl.Color = PlayerColor;
 		mr.Tint = PlayerColor;
 	}
 

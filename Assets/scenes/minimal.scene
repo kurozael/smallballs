@@ -218,6 +218,17 @@
           "OnComponentStart": null,
           "OnComponentUpdate": null,
           "Scale": 0.2
+        },
+        {
+          "__type": "Sandbox.Highlight",
+          "__guid": "6ea67f16-2e5a-4b16-8d05-532931b9ee1e",
+          "__enabled": true,
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null
         }
       ],
       "Children": []
