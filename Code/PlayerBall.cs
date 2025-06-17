@@ -35,20 +35,29 @@ public sealed class PlayerBall : Component
 	{
 		if ( !IsLocallyControlled )
 			return;
-
-		// Update camera angles with mouse input
+		
 		var mouseX = Input.MouseDelta.x;
 		var mouseY = Input.MouseDelta.y;
 
 		_cameraYaw -= mouseX * 0.1f;
 		_cameraPitch += mouseY * 0.1f;
 		_cameraPitch = Math.Clamp( _cameraPitch, -80f, 80f );
-			
-		// Calculate camera position in orbit
+		
 		var orbitRotation = Rotation.From( _cameraPitch, _cameraYaw, 0 );
-		var offset = orbitRotation.Forward * -cameraDistance;
-
-		Scene.Camera.WorldPosition = WorldPosition + Vector3.Up * 100f + offset;
+		var desiredOffset = orbitRotation.Forward * -cameraDistance;
+		
+		var desiredCameraPos = WorldPosition + Vector3.Up * 100f + desiredOffset;
+		
+		var trace = Scene.Trace.Ray( WorldPosition + Vector3.Up * 100f, desiredCameraPos )
+			.IgnoreGameObjectHierarchy( GameObject )
+			.Size( 10f )
+			.Run();
+		
+		if ( trace.Hit )
+			Scene.Camera.WorldPosition = trace.EndPosition + trace.Direction * 10f;
+		else
+			Scene.Camera.WorldPosition = desiredCameraPos;
+		
 		Scene.Camera.WorldRotation = Rotation.LookAt( WorldPosition - Scene.Camera.WorldPosition );
 
 		if ( Input.Pressed( "Jump" ) )
