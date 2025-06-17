@@ -3,7 +3,7 @@
     "__guid": "a9b27260-ae60-4ec7-b965-4e6f2f659650",
     "__version": 1,
     "Flags": 0,
-    "Name": "Sphere",
+    "Name": "player",
     "Position": "0,0,0",
     "Rotation": "0,0,0,1",
     "Scale": "1,1,1",
@@ -59,7 +59,7 @@
           "Roll": false
         },
         "MassCenterOverride": "0,0,0",
-        "MassOverride": 0,
+        "MassOverride": 1,
         "MotionEnabled": true,
         "OnComponentDestroy": null,
         "OnComponentDisabled": null,
@@ -97,6 +97,8 @@
         "__type": "PlayerBall",
         "__guid": "7fb329bc-b829-417e-87d6-3e4bf6e07e7f",
         "__enabled": true,
+        "JumpPower": 1.25,
+        "MoveSpeed": 1,
         "OnComponentDestroy": null,
         "OnComponentDisabled": null,
         "OnComponentEnabled": null,
@@ -105,7 +107,26 @@
         "OnComponentUpdate": null
       }
     ],
-    "Children": []
+    "Children": [],
+    "__properties": {
+      "NetworkInterpolation": true,
+      "TimeScale": 1,
+      "WantsSystemScene": true,
+      "Metadata": {},
+      "NavMesh": {
+        "Enabled": false,
+        "IncludeStaticBodies": true,
+        "IncludeKeyframedBodies": true,
+        "EditorAutoUpdate": true,
+        "AgentHeight": 64,
+        "AgentRadius": 16,
+        "AgentStepSize": 18,
+        "AgentMaxSlope": 40,
+        "ExcludedBodies": "",
+        "IncludedBodies": ""
+      }
+    },
+    "__variables": []
   },
   "ResourceVersion": 2,
   "ShowInMenu": false,
