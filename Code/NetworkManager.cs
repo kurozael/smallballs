@@ -15,6 +15,16 @@ public sealed class NetworkManager : Component, Component.INetworkListener
 		return base.OnLoad();
 	}
 
+	void INetworkListener.OnDisconnected( Connection channel )
+	{
+		var balls = Scene.GetAll<PlayerBall>().Where( x => x.ControllerId == channel.Id );
+
+		foreach ( var ball in balls )
+		{
+			ball.Destroy();
+		}
+	}
+	
 	void INetworkListener.OnActive( Connection channel )
 	{
 		var playerObject = PlayerPrefab.Clone();

@@ -8,7 +8,7 @@ public sealed class PlayerBall : Component
 	[Property] public float MaxSpeed { get; set; } = 800f;
 	[Property] public Color PlayerColor { get; set; }
 	
-	[Sync] private Connection Controller { get; set; }
+	[Sync] public Guid ControllerId { get; private set; }
 	
 	private RealTimeUntil NextInputTime { get; set; }
 
@@ -20,13 +20,13 @@ public sealed class PlayerBall : Component
 	public void SetController( Connection controller )
 	{
 		Assert.True( Networking.IsHost );
-		Controller = controller;
+		ControllerId = controller.Id;
 	}
 
 	private TimeUntil _nextJumpTime;
 	private PlayerInput _input;
 
-	public bool IsLocallyControlled => Connection.Local == Controller;
+	public bool IsLocallyControlled => Connection.Local.Id == ControllerId;
 
 	private readonly float cameraDistance = 1000f;
 	private float _cameraYaw = 0f;
@@ -111,7 +111,8 @@ public sealed class PlayerBall : Component
 		
 		if ( !_input.MoveDir.IsNearZeroLength )
 		{
-			rb.ApplyTorque( Vector3.Cross( Vector3.Up, _input.MoveDir ) * rb.Mass * 50000f * Acceleration );
+			rb.ApplyForce( _input.MoveDir * rb.Mass * 1000f * Acceleration );
+			rb.ApplyTorque( Vector3.Cross( Vector3.Up, _input.MoveDir ) * rb.Mass * 30000f * Acceleration );
 		}
 		
 		rb.Velocity = rb.Velocity.ClampLength( MaxSpeed );

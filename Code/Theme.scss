@@ -1,0 +1,269 @@
+$background: #323232;
+$accent: #727272;
+$foreground: #e6e6e6;
+$secondary: #3c63c9;
+
+$background-panel: #fff;
+$foreground-panel: #000;
+
+$step-size: 0.1;
+$step: $background, $step-size;
+
+$font: "Roboto";
+$font-heading: "Poppins";
+$font-weight: 500;
+$header-weight: 700;
+$icon-size: 11px;
+$text-regular: 11px;
+$text-header: 16px;
+$text-huge: 64px;
+
+$main-bar-height: 32px;
+
+$rounding: 4px;
+
+icon {
+    font-family: "Material Icons";
+    font-size: $icon-size;
+    color: $foreground;
+
+    &.huge {
+        font-size: $text-huge;
+    }
+}
+
+img
+{
+    &.huge
+    {
+        width: $text-huge;
+    }
+}
+
+label {
+    font-family: $font;
+    font-weight: $font-weight;
+    font-size: $text-regular;
+    color: $foreground;
+
+    &.heading {
+        font-family: $font-heading;
+        font-weight: $header-weight;
+        font-size: $text-header;
+    }
+}
+
+column {
+    flex-direction: column;
+}
+
+row
+{
+    flex-direction: row;
+}
+
+.gap
+{
+    gap: 4px;
+}
+
+.flex-grow {
+    flex-grow: 1;
+}
+
+.display
+{
+    padding: 4px 16px;
+    position: relative;
+    overflow: hidden;
+    min-width: 200px;
+    align-items: center;
+
+    .progress
+    {
+        position: absolute;
+        width: 100%;
+        height: 1px;
+        bottom: 0;
+        left: 0;
+
+        .inner
+        {
+            height: 100%;
+            width: 50%;
+            background-color: white;
+        }
+    }
+
+    icon
+    {
+        font-size: 24px;
+    }
+}
+
+tabview
+{
+    display: flex;
+    flex-direction: column-reverse;
+
+    .tab-button
+    {
+        border-radius: $rounding $rounding 0 0;
+
+        padding: 0px 10px;
+        gap: 4px;
+
+        &.active
+        {
+            background-color: rgba( black, 0.3 );
+        }
+
+        &:not(.active)
+        {
+            opacity: 0.3;
+        }
+    }
+
+    .tabs
+    {
+        gap: 4px;
+        justify-content: flex-end;
+        flex-direction: row-reverse;
+    }
+
+    tab
+    {
+        padding: 8px;
+        flex-direction: column;
+        background: linear-gradient( to bottom, rgba( black, 0.3 ), rgba( black, 0.5 ) );
+        border-radius: 0 $rounding $rounding $rounding;
+        color: white;
+        min-height: 32px;
+
+        &.active
+        {
+            display: flex;
+        }
+
+        &:not(.active)
+        {
+            display: none;
+        }
+    }
+}
+
+TextEntry
+{
+	height: 24px;
+	border-radius: $rounding;
+}
+
+scrolllist
+{
+    flex-direction: column;
+    overflow: scroll;
+    gap: 4px;
+}
+
+.square-button
+{
+    pointer-events: all;
+    padding: 6px;
+    align-items: center;
+    gap: 2px;
+    cursor: pointer;
+    color: $foreground;
+    background-color: rgba( black, 0.4 );
+    border: 0.5px solid #1b2127a9;
+    backdrop-filter: blur( 10px );
+    aspect-ratio: 1;
+    text-align: center;
+    justify-content: center;
+    border-radius: 8px;
+    cursor: pointer;
+    position: relative;
+
+    &:before
+    {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        border-radius: 8px;
+        border: 0.5px solid #707285ca;
+    }
+
+    icon, img
+    {
+        pointer-events: none;
+        font-size: 24px;
+        width: 24px;
+        height: 24px;
+    }
+
+    &:hover
+    {
+        background-color: rgba( $secondary, 0.5 );
+    }
+}
+
+.square-icon
+{
+    background-color: rgba( black, 0.4 );
+    padding: 2px;
+    border-radius: $rounding;
+    cursor: pointer;
+    pointer-events: all;
+}
+
+$separator: #707285ca;
+
+separator
+{
+    width: 0.5px;
+    height: 40px;
+    margin-top: 0px;
+    margin-left: 8px;
+    margin-right: 8px;
+    background-image: linear-gradient( to top, rgba( $separator, 0.8 ), rgba( $separator, 0.7 ), rgba( $separator, 0.8 ) );
+}
+
+.column, column
+{
+    separator
+    {
+        margin: 2px 0;
+        width: 100%;
+        height: 0.5px;
+        background-image: linear-gradient( to right, rgba( $separator, 0.8 ), rgba( $separator, 0.7 ), rgba( $separator, 0.8 ) );
+    }
+}
+
+column, row
+{
+    .padding
+    {
+        padding: 4px;
+    }
+}
+
+.window-container
+{
+    position: relative;
+    background: linear-gradient(180deg, #444f60c7 0%, #3a4555 100%);
+    border: 0.5px solid #1b2127;
+    backdrop-filter: blur( 15px );
+    border-radius: 8px;
+
+    &:before
+    {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        border-radius: 8px;
+        border: 0.5px solid #707285;
+    }
+}
