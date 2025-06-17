@@ -6,6 +6,7 @@ public sealed class PlayerBall : Component
 	[Property] public float JumpPower { get; set; } = 1f;
 	[Property] public float Acceleration { get; set; } = 1f;
 	[Property] public float MaxSpeed { get; set; } = 800f;
+	[Property] public Color PlayerColor { get; set; }
 	
 	[Sync] private Connection Controller { get; set; }
 	
@@ -30,7 +31,13 @@ public sealed class PlayerBall : Component
 	private readonly float cameraDistance = 1000f;
 	private float _cameraYaw = 0f;
 	private float _cameraPitch = 20f;
-	
+
+	protected override void OnStart()
+	{
+		var mr = GetComponent<ModelRenderer>();
+		mr.Tint = PlayerColor;
+	}
+
 	protected override void OnUpdate()
 	{
 		if ( !IsLocallyControlled )

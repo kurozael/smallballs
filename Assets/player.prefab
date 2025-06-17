@@ -24,7 +24,7 @@
         "MaterialOverride": null,
         "Materials": {
           "indexed": {
-            "0": "devtextures/dev_neonredgrid.vmat"
+            "0": "materials/dev/light/dev_light_06.vmat"
           }
         },
         "Model": "models/dev/sphere.vmdl",
@@ -97,8 +97,9 @@
         "__type": "PlayerBall",
         "__guid": "7fb329bc-b829-417e-87d6-3e4bf6e07e7f",
         "__enabled": true,
+        "Acceleration": 1,
         "JumpPower": 1.25,
-        "MoveSpeed": 1,
+        "MaxSpeed": 800,
         "OnComponentDestroy": null,
         "OnComponentDisabled": null,
         "OnComponentEnabled": null,
@@ -134,7 +135,7 @@
   "MenuIcon": null,
   "DontBreakAsTemplate": false,
   "__references": [
-    "fishum.dev_neonredgrid#25863"
+    "tiowevolve.dev_light_06#52981"
   ],
   "__version": 2
 }

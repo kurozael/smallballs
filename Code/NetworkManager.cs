@@ -20,6 +20,7 @@ public sealed class NetworkManager : Component, Component.INetworkListener
 		var playerObject = PlayerPrefab.Clone();
 		var player = playerObject.GetComponent<PlayerBall>();
 		player.WorldPosition = Vector3.Up * 100f;
+		player.PlayerColor = Color.Random;
 		player.SetController( channel );
 		playerObject.NetworkSpawn();
 	}
