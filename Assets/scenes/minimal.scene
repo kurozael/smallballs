@@ -266,9 +266,9 @@
       "__version": 1,
       "Flags": 0,
       "Name": "Plane",
-      "Position": "0,0,0",
+      "Position": "-5000,-5000,0",
       "Rotation": "0,0,0,1",
-      "Scale": "100,100,1",
+      "Scale": "1,1,1",
       "Tags": "",
       "Enabled": true,
       "NetworkMode": 2,
@@ -277,41 +277,16 @@
       "OwnerTransfer": 1,
       "Components": [
         {
-          "__type": "Sandbox.ModelRenderer",
-          "__guid": "f7858b96-2a3c-4abb-a411-a8de1a255c10",
+          "__type": "Sandbox.Terrain",
+          "__guid": "1da011ba-f045-4379-a16c-f439449c3753",
           "__enabled": true,
-          "BodyGroups": 18446744073709551615,
-          "CreateAttachments": false,
-          "MaterialGroup": null,
-          "MaterialOverride": null,
-          "Materials": {
-            "indexed": {
-              "0": "materials/dev/light/dev_light_07.vmat"
-            }
-          },
-          "Model": "models/dev/plane.vmdl",
-          "OnComponentDestroy": null,
-          "OnComponentDisabled": null,
-          "OnComponentEnabled": null,
-          "OnComponentFixedUpdate": null,
-          "OnComponentStart": null,
-          "OnComponentUpdate": null,
-          "RenderOptions": {
-            "GameLayer": true,
-            "OverlayLayer": false,
-            "BloomLayer": false,
-            "AfterUILayer": false
-          },
-          "RenderType": "On",
-          "Tint": "1,1,1,1"
-        },
-        {
-          "__type": "Sandbox.PlaneCollider",
-          "__guid": "83505ad9-45bd-4b6a-92d1-694d318b44a3",
-          "__enabled": true,
-          "Center": "0,0,0",
+          "__version": 1,
+          "ClipMapLodExtentTexels": 256,
+          "ClipMapLodLevels": 6,
+          "EnableCollision": true,
           "Friction": null,
           "IsTrigger": false,
+          "MaterialOverride": null,
           "OnComponentDestroy": null,
           "OnComponentDisabled": null,
           "OnComponentEnabled": null,
@@ -322,10 +297,13 @@
           "OnObjectTriggerExit": null,
           "OnTriggerEnter": null,
           "OnTriggerExit": null,
-          "Scale": "100,100",
+          "RenderType": "Off",
           "Static": true,
+          "Storage": "ground.terrain",
           "Surface": null,
-          "SurfaceVelocity": "0,0,0"
+          "SurfaceVelocity": "0,0,0",
+          "TerrainHeight": 10000,
+          "TerrainSize": 10000
         }
       ],
       "Children": []
@@ -622,136 +600,6 @@
         }
       ],
       "Children": []
-    },
-    {
-      "__guid": "576c5028-4bc1-4a0d-bc52-68cfa472e749",
-      "__version": 1,
-      "Flags": 0,
-      "Name": "Cube",
-      "Position": "177.3718,367.2969,-20.46834",
-      "Rotation": "0,-0.1305262,0,0.9914449",
-      "Scale": "5.899998,4.499998,1",
-      "Tags": "",
-      "Enabled": true,
-      "NetworkMode": 2,
-      "NetworkInterpolation": true,
-      "NetworkOrphaned": 0,
-      "OwnerTransfer": 1,
-      "Components": [
-        {
-          "__type": "Sandbox.ModelRenderer",
-          "__guid": "7c493f50-ae23-49fd-aa4d-7c943ca515fc",
-          "__enabled": true,
-          "BodyGroups": 18446744073709551615,
-          "CreateAttachments": false,
-          "MaterialGroup": null,
-          "MaterialOverride": null,
-          "Materials": null,
-          "Model": "models/dev/box.vmdl",
-          "OnComponentDestroy": null,
-          "OnComponentDisabled": null,
-          "OnComponentEnabled": null,
-          "OnComponentFixedUpdate": null,
-          "OnComponentStart": null,
-          "OnComponentUpdate": null,
-          "RenderOptions": {
-            "GameLayer": true,
-            "OverlayLayer": false,
-            "BloomLayer": false,
-            "AfterUILayer": false
-          },
-          "RenderType": "On",
-          "Tint": "1,1,1,1"
-        },
-        {
-          "__type": "Sandbox.BoxCollider",
-          "__guid": "5b5fc0eb-ad38-4ee5-8330-3b2165b7e65f",
-          "__enabled": true,
-          "Center": "0,0,0",
-          "Friction": null,
-          "IsTrigger": false,
-          "OnComponentDestroy": null,
-          "OnComponentDisabled": null,
-          "OnComponentEnabled": null,
-          "OnComponentFixedUpdate": null,
-          "OnComponentStart": null,
-          "OnComponentUpdate": null,
-          "OnObjectTriggerEnter": null,
-          "OnObjectTriggerExit": null,
-          "OnTriggerEnter": null,
-          "OnTriggerExit": null,
-          "Scale": "50,50,50",
-          "Static": false,
-          "Surface": null,
-          "SurfaceVelocity": "0,0,0"
-        }
-      ],
-      "Children": []
-    },
-    {
-      "__guid": "becb41c2-ed44-43be-af6b-d5c6112bba44",
-      "__version": 1,
-      "Flags": 0,
-      "Name": "Cube (1)",
-      "Position": "192.9764,-256.2916,-16.28709",
-      "Rotation": "0,-0.1305262,0,0.9914449",
-      "Scale": "5.899998,4.499998,1",
-      "Tags": "",
-      "Enabled": true,
-      "NetworkMode": 2,
-      "NetworkInterpolation": true,
-      "NetworkOrphaned": 0,
-      "OwnerTransfer": 1,
-      "Components": [
-        {
-          "__type": "Sandbox.ModelRenderer",
-          "__guid": "bde9c54b-99c6-4922-800d-bfa3b19a01d3",
-          "__enabled": true,
-          "BodyGroups": 18446744073709551615,
-          "CreateAttachments": false,
-          "MaterialGroup": null,
-          "MaterialOverride": null,
-          "Materials": null,
-          "Model": "models/dev/box.vmdl",
-          "OnComponentDestroy": null,
-          "OnComponentDisabled": null,
-          "OnComponentEnabled": null,
-          "OnComponentFixedUpdate": null,
-          "OnComponentStart": null,
-          "OnComponentUpdate": null,
-          "RenderOptions": {
-            "GameLayer": true,
-            "OverlayLayer": false,
-            "BloomLayer": false,
-            "AfterUILayer": false
-          },
-          "RenderType": "On",
-          "Tint": "1,1,1,1"
-        },
-        {
-          "__type": "Sandbox.BoxCollider",
-          "__guid": "a16ba9e3-56d0-4813-8815-2655299bae95",
-          "__enabled": true,
-          "Center": "0,0,0",
-          "Friction": null,
-          "IsTrigger": false,
-          "OnComponentDestroy": null,
-          "OnComponentDisabled": null,
-          "OnComponentEnabled": null,
-          "OnComponentFixedUpdate": null,
-          "OnComponentStart": null,
-          "OnComponentUpdate": null,
-          "OnObjectTriggerEnter": null,
-          "OnObjectTriggerExit": null,
-          "OnTriggerEnter": null,
-          "OnTriggerExit": null,
-          "Scale": "50,50,50",
-          "Static": false,
-          "Surface": null,
-          "SurfaceVelocity": "0,0,0"
-        }
-      ],
-      "Children": []
     }
   ],
   "SceneProperties": {
@@ -777,8 +625,6 @@
   "ResourceVersion": 3,
   "Title": "minimal",
   "Description": null,
-  "__references": [
-    "tiowevolve.dev_light_07#52982"
-  ],
+  "__references": [],
   "__version": 3
 }
